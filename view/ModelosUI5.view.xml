@@ -1,0 +1,196 @@
+<mvc:View controllerName="treinaui5.modelosui5.controller.ModelosUI5" 
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    >
+    <Page id="page" title="{i18n>title}">
+        <VBox id="_IDGenVBox1" class="sapUiSmallMargin">
+            <f:Form busy="{/ocupado}" id="FormToolbar"
+                editable="true"
+                ariaLabelledBy="Title1">
+                <f:toolbar>
+                    <Toolbar id="TB1">
+                        <Title id="Title1" text="General Information"/>
+                        <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+                        <Button id="_IDGenButton1" icon="sap-icon://settings"/>
+                        <Button id="_IDGenButton2" icon="sap-icon://drop-down-list" />
+                    </Toolbar>
+                </f:toolbar>
+                <f:layout>
+                    <f:ResponsiveGridLayout id="_IDGenResponsiveGridLayout1"
+                        labelSpanXL="4"
+                        labelSpanL="3"
+                        labelSpanM="4"
+                        adjustLabelSpan="false"
+                        emptySpanXL="0"
+                        emptySpanL="4"
+                        columnsXL="2"
+                        columnsL="1"
+                        singleContainerFullSize="false" />
+                </f:layout>
+                <f:formContainers>
+                    <f:FormContainer id="Container" ariaLabelledBy="TPInfo">
+                        <f:toolbar>
+                            <Toolbar id="TPInfo">
+                                <Title id="PersonalInformation" text="Personal Infomation"/>
+                            </Toolbar>
+                        </f:toolbar>
+                        <f:formElements>
+                            <f:FormElement id="FName" label="First Name/Last Name">
+                                <f:fields>
+                                    <Input value="{path: '/pessoa/firstName', formatter: '.caixaAlta'}" id="firstName"/>
+                                    <Input value="{path: '/pessoa/lastName', formatter: '.caixaAlta'}" id="lastName">
+                                        <layoutData>
+                                            <l:GridData id="_IDGenGridData4" span="XL2 L1 M4 S4" />
+                                        </layoutData>
+                                    </Input>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement id="FAge" label="Age/Gender">
+                                <f:fields>
+                                    <Input value="{/pessoa/age}" id="Age"/>
+                                    <Select id="SGender" items="{path: '/pessoa/gender'}">
+                                        <items>
+                                            <core:Item id="IGender" key="" text="{}" />
+                                        </items>
+                                        <layoutData>
+                                            <l:GridData id="_IDGenGridData5" span="XL2 L2 M5 S4" />
+                                        </layoutData>
+                                    </Select>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement id="FCpf" label="CPF/RG">
+                                <f:fields>
+                                    <MaskInput id="_IDGenMaskInput1"
+                                        mask="999.999.999-99" 
+                                        placeholderSymbol="_" 
+                                        value="{/pessoa/cpf}"/>
+                                    <MaskInput id="_IDGenMaskInput2"
+                                        mask="99.999.999-9" 
+                                        placeholderSymbol="_" 
+                                        value="{/pessoa/rg}"/>
+                                </f:fields>
+                            </f:FormElement>
+                        </f:formElements>                          
+                    </f:FormContainer>
+                </f:formContainers>
+                <f:formContainers>
+                    <f:FormContainer id="_IDGenFormContainer1" ariaLabelledBy="Title2">
+                        <f:toolbar>
+                            <Toolbar id="_IDGenToolbar1">
+                                <Title id="Title2" text="Address"/>
+                                <ToolbarSpacer id="_IDGenToolbarSpacer2" />
+                                <!-- <Button id="_IDGenButton3" icon="sap-icon://settings"/> -->
+                            </Toolbar>
+                        </f:toolbar>
+                        <f:formElements>
+                            <!-- <f:FormElement id="_IDGenFormElement1" label="Name">
+                                <f:fields>
+                                    <Input value="{path: '/nome', formatter: '.caixaAlta'}" id="nome"/>
+                                </f:fields>
+                            </f:FormElement> -->
+                            <f:FormElement id="_IDGenFormElement2" label="Street">
+                                <f:fields>
+                                    <Input id="street" value="{/endereco/street}" />
+                                    <Input id="number" value="{/endereco/number}">
+                                        <layoutData>
+                                            <l:GridData id="_IDGenGridData1" span="XL2 L1 M3 S4" />
+                                        </layoutData>
+                                    </Input>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement id="_IDGenFormElement3" label="ZIP Code/City">
+                                <f:fields>
+                                    <Input id="zipCode" value="{/endereco/cep}">
+                                        <layoutData>
+                                            <l:GridData id="_IDGenGridData2" span="XL2 L1 M3 S4" />
+                                        </layoutData>
+                                    </Input>
+                                    <Input id="_IDGenInput4" value="{/endereco/city} / {/endereco/estado}" />
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement id="_IDGenFormElement4" label="Country">
+                                <f:fields>
+                                    <Input id="country" value="{/endereco/country}">
+                                    </Input>
+                                        <!-- <items>
+                                            <core:Item id="_IDGenItem1" text="Germany" key="Germany"/>
+                                            <core:Item id="_IDGenItem2" text="USA" key="USA"/>
+                                            <core:Item id="_IDGenItem3" text="England" key="England"/>
+                                        </items> -->
+                                    <!-- </Select> -->
+                                </f:fields>
+                            </f:FormElement>
+                        </f:formElements>
+                    </f:FormContainer>
+                    <f:FormContainer id="_IDGenFormContainer2" ariaLabelledBy="Title3">
+                        <f:toolbar>
+                            <Toolbar id="_IDGenToolbar2">
+                                <Title id="Title3" text="Online"/>
+                                <ToolbarSpacer id="_IDGenToolbarSpacer3" />
+                                <!-- <Button id="_IDGenButton4" icon="sap-icon://settings"/> -->
+                            </Toolbar>
+                        </f:toolbar>
+                        <f:formElements>
+                            <f:FormElement id="_IDGenFormElement5" label="Web">
+                                <f:fields>
+                                    <Input value="{/internet/web}" type="Url" id="url"/>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement id="_IDGenFormElement6" label="Twitter">
+                                <f:fields>
+                                    <Input value="{/internet/twitter}" id="twitter"/>
+                                </f:fields>
+                            </f:FormElement>
+                        </f:formElements>
+                    </f:FormContainer>
+
+                    <f:FormContainer id="_IDGenFormContainer3" ariaLabelledBy="Title3">
+                        <f:toolbar>
+                            <Toolbar id="_IDGenToolbar3">
+                                <Title id="Title4" text="Skills"/>
+                                <ToolbarSpacer id="_IDGenToolbarSpacer4" />
+                                <!-- <Button id="_IDGenButton5" icon="sap-icon://settings"/> -->
+                            </Toolbar>
+                        </f:toolbar>
+                        <f:formElements>
+                            <f:FormElement id="_IDGenFormElement7" label="Skills">
+                                <f:fields>
+                                    <Select id="skills" items="{path:'/skills'}">
+                                        <items>
+                                            <core:Item id="_IDGenItem1" text="{}"/>
+                                        </items>
+                                    </Select>
+                                </f:fields>
+                            </f:FormElement>
+                            <!-- <f:FormElement id="_IDGenFormElement8" label="Skills2">
+                                <f:fields>
+                                    <Select id="skills2" items="{path:'/skills2'}">
+                                        <items>
+                                            <core:Item id="_IDGenItem2" text="{nome}"/>
+                                        </items>
+                                    </Select>
+                                </f:fields>
+                            </f:FormElement>
+                            <f:FormElement id="_IDGenFormElement9" label="Two Way">
+                                <f:fields>
+                                    <Slider id="_IDGenSlider1" max="5" min="1" value="{/nota}"/>
+                                    <RatingIndicator id="_IDGenRatingIndicator1" value="{/nota}"/>
+                                </f:fields>
+                            </f:FormElement> -->
+                        </f:formElements>
+                    </f:FormContainer>                    
+                </f:formContainers>
+            </f:Form>
+        </VBox>
+        <footer>
+            <Toolbar id="_IDGenToolbar4">
+                <content>
+                    <Button id="_IDGenButton3" text="Salvar" press="onSave"/> 
+                </content>
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>
