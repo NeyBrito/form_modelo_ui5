@@ -24,6 +24,15 @@
     <script id="locate-reuse-libs" src="./utils/locate-reuse-libs.js"
         data-sap-ui-manifest-uri="./manifest.json"
         data-sap-ui-componentName="treinaui5.modelosui5">
+    </script>
+    <script>
+         sap.ui.getCore().attachInit(function () {
+            sap.ui.require(["sap/ui/core/mvc/XMLView"], function (XMLView) {
+            XMLView.create({ viewName: "ModelosUI5.view" }).then(function (oView) {
+            oView.placeAt("content");
+          });
+        });
+      });
     </script> 
 </head>
 <body class="sapUiBody sapUiSizeCompact" id="content">
