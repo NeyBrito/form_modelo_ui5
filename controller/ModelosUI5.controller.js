@@ -11,6 +11,13 @@ sap.ui.define([
         "use strict";
 
         return Controller.extend("treinaui5.modelosui5.controller.ModelosUI5", {
+            
+            onSave: (_oEvent)=>{
+                var oModelo = this.getView().getModel();
+                var bOcupado = oModelo.getProperty("/ocupado");
+                oModelo.setProperty("/ocupado", !bOcupado);
+            },
+
             onInit: function () {
                 //Fonte de dados
                 var oPessoa = {
@@ -69,13 +76,7 @@ sap.ui.define([
                 if (texto){
                     return texto.toUpperCase();
                 }               
-            },
-            onSave: function(oEvent){
-                var oModelo = this.getView().getModel();
-                var bOcupado = oModelo.getProperty("/ocupado");
-                oModelo.setProperty("/ocupado", !bOcupado);
-            },
-       
+            },       
 		    onPress: function(oEvent) {
 			
             }
