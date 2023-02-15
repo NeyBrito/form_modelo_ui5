@@ -27,12 +27,12 @@
     </script>
     <script>
         sap.ui.getCore().attachInit(function () {
-        sap.ui.require(["sap/ui/core/mvc/XMLView"], function (XMLView) {
-          XMLView.create({ viewName: "ModelosUI5.view" }).then(function (oView) {
-            oView.placeAt("content");
-          });
+            sap.ui.require(["sap/ui/core/mvc/XMLView"], function (XMLView) {
+                    XMLView.create({ viewName: "ModelosUI5.view" }).then(function (oView) {
+                    oView.placeAt("content");
+                });
+            });
         });
-      });
     </script> 
 </head>
 <body class="sapUiBody sapUiSizeCompact" id="content">
