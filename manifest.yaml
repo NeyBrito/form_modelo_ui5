@@ -2,3 +2,16 @@ applications:
 - name: sapui5-modelosUI5
   memory: 64M
   buildpack: staticfile_buildpack
+  path: /modelosUI5
+  env:
+    destinations: >
+        [
+          {
+            "name":"MODELOS_UI5",
+            "url":"https://api.cf.us10-001.hana.ondemand.com",
+          }
+        ]
+    services:
+          - xsuaa-service
+          - dest-service
+          - html5-repo-runtime   

@@ -188,7 +188,7 @@
         <footer>
             <Toolbar id="_IDGenToolbar4">
                 <content>
-                    <Button id="_IDGenButton3" text="Salvar" press=".onSave"/> 
+                    <Button id="_IDGenButton3" text="Salvar" press="onSave"/> 
                 </content>
             </Toolbar>
         </footer>
