@@ -3,7 +3,7 @@
 
 ## Utilizando Modelos em Form SAP UI5
 
-[![site](https://img.shields.io/badge/MODELO-SAPUI5-685EA9?style=for-the-badge&logoColor=white)](https://neybrito.github.io/sapui5_desafio_viacepui5/)
+[![site](https://img.shields.io/badge/MODELO-SAPUI5-685EA9?style=for-the-badge&logoColor=white)](https://neybrito.github.io/form_modelo_ui5/)
 
 
 ### Formulário Simples
